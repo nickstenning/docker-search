@@ -1,0 +1,22 @@
+# This node will always be the (only) master and data node.
+node.master: true
+node.data: true
+
+# We're a single node at the moment, so there's no point sharding or replicating
+# documents.
+index.number_of_shards: 1
+index.number_of_replicas: 0
+
+# Data directory
+path.data: /data
+
+# Disable multicast discovery
+discovery.zen.ping.multicast.enabled: false
+
+# Disable dynamic scripts
+script.disable_dynamic: true
+
+# Set up CORS for read-only access
+http.cors.enabled: true
+http.cors.allow-methods: [OPTIONS, HEAD, GET]
+
